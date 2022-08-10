@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./src/img/logo.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./src/css/geral.css">
+    <title>PARRILLA 173</title>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <div class="col-12 row d-flex justify-content-center">
+            <img src="./src/img/logo.jpg" alt="logo" class="logo">
+        </div>
+        <hr>
+        <form class="g-3" action="#" method="post">
+            <!-- DADOS DO USUÁRIO -->
+            <div id="dados_usuario" class="row mt-4">
+                <div class="col-md-4">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" name="nome" id="nome" class="form-control">
+                    <div class="alert alert-warning fade show mt-2 alerta-validacao" role="alert" id="validacao-nome"
+                        style="display: none;">
+                        preencha este campo!
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="telefone" class="form-label">Telefone</label>
+                    <input type="text" name="telefone" id="telefone" class="form-control telefone">
+                    <div class="alert alert-warning fade show mt-2 alerta-validacao" role="alert"
+                        id="validacao-telefone" style="display: none;">
+                        preencha este campo!
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="telefone" class="form-label">CEP</label>
+                    <input type="text" name="cep" id="cep" class="form-control">
+                    <div class="alert alert-warning fade show mt-2 alerta-validacao" role="alert" id="validacao-cep"
+                        style="display: none;">
+                        preencha este campo!
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="rua" class="form-label">Rua</label>
+                    <input type="text" name="rua" id="rua" class="form-control" readonly>
+                </div>
+                <div class="col-md-4">
+                    <label for="bairro" class="form-label">Bairro</label>
+                    <input type="text" name="bairro" id="bairro" class="form-control" readonly>
+                </div>
+                <div class="col-md-4">
+                    <label for="cidade" class="form-label">Cidade</label>
+                    <input type="text" name="cidade" id="cidade" class="form-control" readonly>
+                </div>
+                <div class="col-md-2">
+                    <label for="numero" class="form-label">Nº</label>
+                    <input type="number" name="numero" id="numero" class="form-control">
+                    <div class="alert alert-warning fade show mt-2 alerta-validacao" role="alert" id="validacao-numero"
+                        style="display: none;">
+                        preencha este campo!
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <label for="residencia" class="form-label">Residência</label>
+                    <select id="residencia" class="form-select">
+                        <option disabled selected>Selecione...</option>
+                        <option value="Casa">Casa</option>
+                        <option value="Apartamento">Apartamento</option>
+                    </select>
+                </div>
+                
+                <div class="col-md-2 res_ap" style="display: none;">
+                    <label for="apartamento" class="form-label">Apartamento</label>
+                    <input type="number" name="apartamento" id="apartamento" class="form-control">
+                </div>
+                <div class="col-md-2 res_ap" style="display: none;">
+                    <label for="bloco" class="form-label">Bloco</label>
+                    <input type="text" name="bloco" id="bloco" class="form-control" style="text-transform: capitalize;">
+                </div>
+                <div class="col-12 mt-3" id="proximo">
+                    <button type="submit" class="btn etapa_1">Próxima Etapa</button>
+                </div>
+            </div>
+
+            <!-- PEDIDO DE LANCHE -->
+            <div class="row mt-3" id="pedido_lanche" style="display: none;">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="lanche" class="form-label">Lanche</label>
+                        <select id="lanche" class="form-select">
+                            <option disabled selected>Selecione...</option>
+                            <option value="PARRILLA BERRY">PARRILLA BERRY</option>
+                            <option value="PARRILLA BERRY COMBO">PARRILLA BERRY COMBO</option>
+                            <option value="PARRILLA CANDY">PARRILLA CANDY</option>
+                            <option value="PARRILLA GRILLED HERBS">PARRILLA GRILLED HERBS</option>
+                            <option value="PARRILLA GRILLED HERBS COMBO">PARRILLA GRILLED HERBS COMBO</option>
+                            <option value="PARRILLA BURGER">PARRILLA BURGER</option>
+                            <option value="PARRILLA BURGER COMBO">PARRILLA BURGER COMBO</option>
+                            <option value="PARRILLA CATUPIRY ANGUS">PARRILLA CATUPIRY ANGUS</option>
+                            <option value="PARRILLA CATUPIRY ANGUS COMBO">PARRILLA CATUPIRY ANGUS COMBO</option>
+                            <option value="PARRILLA CLÁSSIC">PARRILLA CLÁSSIC</option>
+                            <option value="PARRILLA CLÁSSIC COMBO">PARRILLA CLÁSSIC COMBO</option>
+                            <option value="PARRILLA SPECIAL DUPLO">PARRILLA SPECIAL DUPLO</option>
+                            <option value="PARRILLA SPECIAL DUPLO COMBO">PARRILLA SPECIAL DUPLO COMBO</option>
+                            <option value="PARRILLA CHICKEN">PARRILLA CHICKEN</option>
+                            <option value="PARRILLA CHICKEN COMBO">PARRILLA CHICKEN COMBO</option>
+                        </select>
+                        <div class="form-group mt-3">
+                            <label for="preco_lanche">Preço</label>
+                            <input type="text" class="form-control mt-1" id="preco_lanche" readonly>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="observacoes">Observações</label>
+                            <textarea id="observacoes" class="form-control mt-1" name="" rows="3" placeholder="Tem algo a acrescentar?"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- IMAGENS LANCHES -->
+                    <div class="col-md-4 d-flex justify-content-center">
+                        <img src="./src/img/sem_imagem.png" alt="" class="img-lanche berry" style="display: none;" >
+                        <img src="./src/img/sem_imagem.png" alt="" class="img-lanche berry_combo" style="display: none;" >
+                        <img src="./src/img/sem_imagem.png" alt="" class="img-lanche candy" style="display: none;" >
+                        <img src="./src/img/sem_imagem.png" alt="" class="img-lanche parrilla_grilled_herbs" style="display: none;" >
+                        <img src="./src/img/sem_imagem.png" alt="" class="img-lanche parrilla_grilled_herbs_combo" style="display: none;" >
+                        <img src="./src/img/sem_imagem.png" alt="" class="img-lanche burguer" style="display: none;" >
+                        <img src="./src/img/sem_imagem.png" alt="" class="img-lanche burguer_combo" style="display: none;" >
+                        <img src="./src/img/sem_imagem.png" alt="" class="img-lanche catupiry_angus" style="display: none;" >
+                        <img src="./src/img/sem_imagem.png" alt="" class="img-lanche catupiry_angus_combo" style="display: none;" >
+                        <img src="./src/img/sem_imagem.png" alt="" class="img-lanche classic" style="display: none;" >
+                        <img src="./src/img/sem_imagem.png" alt="" class="img-lanche classic_combo" style="display: none;" >
+                        <img src="./src/img/sem_imagem.png" alt="" class="img-lanche special" style="display: none;" >
+                        <img src="./src/img/sem_imagem.png" alt="" class="img-lanche special_combo" style="display: none;" >
+                        <img src="./src/img/sem_imagem.png" alt="" class="img-lanche chicken" style="display: none;" >
+                        <img src="./src/img/sem_imagem.png" alt="" class="img-lanche chicken_combo" style="display: none;" >
+                    </div>
+                    
+                    <!-- INGREDIENTES LANCHES -->
+                    <div class="col-md-4 mt-4">
+                        <div class="berry flex-column" style="display: none;">
+                            <div>
+                                <h4>Ingredientes: </h4>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>Pão brioche</li>
+                                    <li>Hambúrguer de cupim</li>
+                                    <li>Queijo cheddar cremoso</li>
+                                    <li>Cebola roxa</li>
+                                    <li>Bacon</li>
+                                    <li>Geleia de pimenta</li>
+                                    <li>Doritos</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="berry_combo flex-column" style="display: none;">
+                            <div>
+                                <h4>Ingredientes: </h4>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>Pão brioche</li>
+                                    <li>Hambúrguer de cupim</li>
+                                    <li>Queijo cheddar cremoso</li>
+                                    <li>Cebola roxa</li>
+                                    <li>Bacon</li>
+                                    <li>Geleia de pimenta</li>
+                                    <li>Doritos</li>
+                                </ul>
+                                <hr>
+                                <ul>
+                                    <li>1 Coca cola lata</li>
+                                    <li>1 Porção de batata frita</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="candy flex-column" style="display: none;">
+                            <div>
+                                <h4>Ingredientes: </h4>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>Pão brioche</li>
+                                    <li>Doce de leite</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="parrilla_grilled_herbs flex-column" style="display: none;">
+                            <div>
+                                <h4>Ingredientes: </h4>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>Pão Francês</li>
+                                    <li>Hambúrguer de Fraldinha</li>
+                                    <li>Queijo Prato</li>
+                                    <li>Cebola Roxa</li>
+                                    <li>Bacon</li>
+                                    <li>Alface</li>
+                                    <li>Molho de maionese com ervas</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="parrilla_grilled_herbs_combo flex-column" style="display: none;">
+                            <div>
+                                <h4>Ingredientes: </h4>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>Pão Francês</li>
+                                    <li>Hambúrguer de Fraldinha</li>
+                                    <li>Queijo Prato</li>
+                                    <li>Cebola Roxa</li>
+                                    <li>Bacon</li>
+                                    <li>Alface</li>
+                                    <li>Molho de maionese com ervas</li>
+                                </ul>
+                                <hr>
+                                <ul>
+                                    <li>1 Coca cola lata</li>
+                                    <li>1 Porção de batata frita</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="burguer flex-column" style="display: none;">
+                            <div>
+                                <h4>Ingredientes: </h4>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>Pão de Francês</li>
+                                    <li>Hambúrguer de Angus</li>
+                                    <li>Queijo cheddar</li>
+                                    <li>Bacon</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="burguer_combo flex-column" style="display: none;">
+                            <div>
+                                <h4>Ingredientes: </h4>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>Pão de Francês</li>
+                                    <li>Hambúrguer de Angus</li>
+                                    <li>Queijo cheddar</li>
+                                    <li>Bacon</li>
+                                </ul>
+                                <hr>
+                                <ul>
+                                    <li>1 Coca cola lata</li>
+                                    <li>1 Porção de batata frita</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="catupiry_angus flex-column" style="display: none;">
+                            <div>
+                                <h4>Ingredientes: </h4>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>Pão Australiano</li>
+                                    <li>Hambúrguer de Angus</li>
+                                    <li>Alface</li>
+                                    <li>Tomate</li>
+                                    <li>Catupiry Empanado</li>
+                                    <li>Cheddar fatia</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="catupiry_angus_combo flex-column" style="display: none;">
+                            <div>
+                                <h4>Ingredientes: </h4>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>Pão Australiano</li>
+                                    <li>Hambúrguer de Angus</li>
+                                    <li>Alface</li>
+                                    <li>Tomate</li>
+                                    <li>Catupiry Empanado</li>
+                                    <li>Cheddar fatia</li>
+                                </ul>
+                                <ul>
+                                    <li>1 Coca cola lata</li>
+                                    <li>1 Porção de batata frita</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="classic flex-column" style="display: none;">
+                            <div>
+                                <h4>Ingredientes: </h4>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>Pão francês</li>
+                                    <li>Hambúrguer de Cupim</li>
+                                    <li>Queijo prato</li>
+                                    <li>Alface</li>
+                                    <li>Tomate</li>
+                                    <li>Catupiry</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="classic_combo flex-column" style="display: none;">
+                            <div>
+                                <h4>Ingredientes: </h4>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>Pão francês</li>
+                                    <li>Hambúrguer de Cupim</li>
+                                    <li>Queijo prato</li>
+                                    <li>Alface</li>
+                                    <li>Tomate</li>
+                                    <li>Catupiry</li>
+                                </ul>
+                                <hr>
+                                <ul>
+                                    <li>1 Coca cola lata</li>
+                                    <li>1 Porção de batata frita</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="special flex-column" style="display: none;">
+                            <div>
+                                <h4>Ingredientes: </h4>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>Pão Brioche</li>
+                                    <li>2 Hambúrgueres de Angus</li>
+                                    <li>Cheddar</li>
+                                    <li>Bacon</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="special_combo flex-column" style="display: none;">
+                            <div>
+                                <h4>Ingredientes: </h4>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>Pão Brioche</li>
+                                    <li>2 Hambúrgueres de Angus</li>
+                                    <li>Cheddar</li>
+                                    <li>Bacon</li>
+                                </ul>
+                                <hr>
+                                <ul>
+                                    <li>1 Coca cola lata</li>
+                                    <li>1 Porção de batata frita</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="chicken flex-column" style="display: none;">
+                            <div>
+                                <h4>Ingredientes: </h4>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>Pão Francês</li>
+                                    <li>Hambúrguer de Frango</li>
+                                    <li>Maionese de Limão Siciliano</li>
+                                    <li>Mix de salada de Ruúcula</li>
+                                    <li>Tomate</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="chicken_combo flex-column" style="display: none;">
+                            <div>
+                                <h4>Ingredientes: </h4>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>Pão Francês</li>
+                                    <li>Hambúrguer de Frango</li>
+                                    <li>Maionese de Limão Siciliano</li>
+                                    <li>Mix de salada de Ruúcula</li>
+                                    <li>Tomate</li>
+                                </ul>
+                                <hr>
+                                <ul>
+                                    <li>1 Coca cola lata</li>
+                                    <li>1 Porção de batata frita</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 mt-3" id="botao_etapa_2">
+                        <button type="submit" class="btn etapa_2">Próxima Etapa</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PEDIDO DE BEBIDA -->
+            <div class="row mt-3" id="pedido_bebida" style="display:none;">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="bebida" class="form-label">Bebidas</label>
+                        <select id="bebida" class="form-select">
+                            <option disabled selected>Selecione...</option>
+                            <optgroup label="Refrigerantes">
+                                <option value="Coca-Cola">Coca</option>
+                                <option value="Pepsi">Pepsi</option>
+                            </optgroup>
+                            <optgroup label="Cervejas">
+                                <option value="Brahma">Brahma</option>
+                                <option value="Amstel">Amstel</option>
+                            </optgroup>
+                            <optgroup label="Outros">
+                                <option value="Água">Agua</option>
+                            </optgroup>
+                        </select>
+                        <div class="form-group mt-3">
+                            <label for="preco_bebida">Preço</label>
+                            <input type="text" class="form-control mt-1" id="preco_bebida" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="./src/img/sem_imagem.png" alt="" class="img-lanche">
+                    </div>
+                    <div class="col-12 mt-3" id="botao">
+                        <button type="submit" class="btn etapa_3">Confirmar Pedido</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORMAS DE PAGAMENTO -->
+            <div class="row mt-3" id="pagamento" style="display: none;">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="forma_pagamento" class="form-label">Forma de pagamento</label>
+                        <select id="forma_pagamento" class="form-select">
+                            <option disabled selected>Selecione...</option>
+                            <option value="Cartão de crédito">Cartão de crédito</option>
+                            <option value="Cartão de débito">Cartão de débito</option>
+                            <option value="Pix">Pix</option>
+                            <option value="Dinheiro">Dinheiro</option>
+                        </select>
+                        <p>Caso sua escolha seja pix, enviar o comprovante assim que efetuar o pedido</p>
+                    </div>
+                    <div class="col-md-4 flex-column justify-content-center chave_pix" style="display: none;">
+                        <h4>Chave pix:</h4>
+                        <p>c4c0cd2f-e0b9-4697-af80-0600e14e062e</p>
+                    </div>
+                    <div class="col-md-4 chave_pix flex-column justify-content-center" id="qrcode" style="display: none;">
+                        <h4>QR Code:</h4>
+                        <img src="./src/img/qrcode.png">
+                    </div>
+                    
+                    <div class="col-md-4 flex-column justify-content-center dinheiro" style="display: none;">
+                        <h4>Troco para quanto:</h4>
+                        <input type="number" id="troco" class="form-control" placeholder="R$" name="troco">
+                    </div>
+                    <div class="col-12 mt-3" id="botao">
+                        <button type="submit" class="btn confirmar_pedido">Confirmar Pedido</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="pedido"></div>
+            
+            <hr>
+
+            <div class="col-12" style="display: none;" id="link_wpp">
+                <a href="" id="finalizar_pedido" class="enviar_pedido mb-3">Enviar Pedido</a>
+            </div>
+        </form>
+        <div class="row col-12">
+            <div class="col-12 text-center">
+                Desenvolvido por Lucas Steinbach
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="./src/js/jquery.mask.js"></script>
+    <script src="./src/js/buscar_cep.js"></script>
+    <script src="./src/js/validate.js"></script>
+    <script>
+        $(document).ready(function () {
+            // mascara de input para telefone e cep 
+            $('.telefone').mask('(00) 0 0000-0000');
+            $('#cep').mask('00000-000');
+            
+            $('#lanche').change(function() {
+                var ingredientes = $(this).val();
+                if(ingredientes == 'PARRILLA BERRY') {
+                    $('.berry').css('display', 'flex');
+                    $('.candy').css('display', 'none');
+                    $('.berry_combo').css('display', 'none');
+                    $('.parrilla_grilled_herbs').css('display', 'none');
+                    $('.parrilla_grilled_herbs_combo').css('display', 'none');
+                    $('.burguer').css('display', 'none');
+                    $('.burguer_combo').css('display', 'none');
+                    $('.catupiry_angus').css('display', 'none');
+                    $('.catupiry_angus_combo').css('display', 'none');
+                    $('.classic').css('display', 'none');
+                    $('.classic_combo').css('display', 'none');
+                    $('.special').css('display', 'none');
+                    $('.special_combo').css('display', 'none');
+                    $('.chicken').css('display', 'none');
+                    $('.chicken_combo').css('display', 'none');
+                } else if(ingredientes == 'PARRILLA CANDY') {
+                    $('.berry').css('display', 'none');
+                    $('.candy').css('display', 'flex');
+                    $('.berry_combo').css('display', 'none');
+                    $('.parrilla_grilled_herbs').css('display', 'none');
+                    $('.parrilla_grilled_herbs_combo').css('display', 'none');
+                    $('.burguer').css('display', 'none');
+                    $('.burguer_combo').css('display', 'none');
+                    $('.catupiry_angus').css('display', 'none');
+                    $('.catupiry_angus_combo').css('display', 'none');
+                    $('.classic').css('display', 'none');
+                    $('.classic_combo').css('display', 'none');
+                    $('.special').css('display', 'none');
+                    $('.special_combo').css('display', 'none');
+                    $('.chicken').css('display', 'none');
+                    $('.chicken_combo').css('display', 'none');
+                } else if(ingredientes == 'PARRILLA BERRY COMBO') {
+                    $('.berry').css('display', 'none');
+                    $('.candy').css('display', 'none');
+                    $('.berry_combo').css('display', 'flex');
+                    $('.parrilla_grilled_herbs').css('display', 'none');
+                    $('.parrilla_grilled_herbs_combo').css('display', 'none');
+                    $('.burguer').css('display', 'none');
+                    $('.burguer_combo').css('display', 'none');
+                    $('.catupiry_angus').css('display', 'none');
+                    $('.catupiry_angus_combo').css('display', 'none');
+                    $('.classic').css('display', 'none');
+                    $('.classic_combo').css('display', 'none');
+                    $('.special').css('display', 'none');
+                    $('.special_combo').css('display', 'none');
+                    $('.chicken').css('display', 'none');
+                    $('.chicken_combo').css('display', 'none');
+                } else if(ingredientes == 'PARRILLA GRILLED HERBS') {
+                    $('.berry').css('display', 'none');
+                    $('.candy').css('display', 'none');
+                    $('.berry_combo').css('display', 'none');
+                    $('.parrilla_grilled_herbs').css('display', 'flex');
+                    $('.parrilla_grilled_herbs_combo').css('display', 'none');
+                    $('.burguer').css('display', 'none');
+                    $('.burguer_combo').css('display', 'none');
+                    $('.catupiry_angus').css('display', 'none');
+                    $('.catupiry_angus_combo').css('display', 'none');
+                    $('.classic').css('display', 'none');
+                    $('.classic_combo').css('display', 'none');
+                    $('.special').css('display', 'none');
+                    $('.special_combo').css('display', 'none');
+                    $('.chicken').css('display', 'none');
+                    $('.chicken_combo').css('display', 'none');
+                } else if(ingredientes == 'PARRILLA GRILLED HERBS COMBO') {
+                    $('.berry').css('display', 'none');
+                    $('.candy').css('display', 'none');
+                    $('.berry_combo').css('display', 'none');
+                    $('.parrilla_grilled_herbs').css('display', 'none');
+                    $('.parrilla_grilled_herbs_combo').css('display', 'flex');
+                    $('.burguer').css('display', 'none');
+                    $('.burguer_combo').css('display', 'none');
+                    $('.catupiry_angus').css('display', 'none');
+                    $('.catupiry_angus_combo').css('display', 'none');
+                    $('.classic').css('display', 'none');
+                    $('.classic_combo').css('display', 'none');
+                    $('.special').css('display', 'none');
+                    $('.special_combo').css('display', 'none');
+                    $('.chicken').css('display', 'none');
+                    $('.chicken_combo').css('display', 'none');
+                } else if(ingredientes == 'PARRILLA BURGER') {
+                    $('.berry').css('display', 'none');
+                    $('.candy').css('display', 'none');
+                    $('.berry_combo').css('display', 'none');
+                    $('.parrilla_grilled_herbs').css('display', 'none');
+                    $('.parrilla_grilled_herbs_combo').css('display', 'none');
+                    $('.burguer').css('display', 'flex');
+                    $('.burguer_combo').css('display', 'none');
+                    $('.catupiry_angus').css('display', 'none');
+                    $('.catupiry_angus_combo').css('display', 'none');
+                    $('.classic').css('display', 'none');
+                    $('.classic_combo').css('display', 'none');
+                    $('.special').css('display', 'none');
+                    $('.special_combo').css('display', 'none');
+                    $('.chicken').css('display', 'none');
+                    $('.chicken_combo').css('display', 'none');
+                } else if(ingredientes == 'PARRILLA BURGER COMBO') {
+                    $('.berry').css('display', 'none');
+                    $('.candy').css('display', 'none');
+                    $('.berry_combo').css('display', 'none');
+                    $('.parrilla_grilled_herbs').css('display', 'none');
+                    $('.parrilla_grilled_herbs_combo').css('display', 'none');
+                    $('.burguer').css('display', 'none');
+                    $('.burguer_combo').css('display', 'flex');
+                    $('.catupiry_angus').css('display', 'none');
+                    $('.catupiry_angus_combo').css('display', 'none');
+                    $('.classic').css('display', 'none');
+                    $('.classic_combo').css('display', 'none');
+                    $('.special').css('display', 'none');
+                    $('.special_combo').css('display', 'none');
+                    $('.chicken').css('display', 'none');
+                    $('.chicken_combo').css('display', 'none');
+                } else if(ingredientes == 'PARRILLA CATUPIRY ANGUS') {
+                    $('.berry').css('display', 'none');
+                    $('.candy').css('display', 'none');
+                    $('.berry_combo').css('display', 'none');
+                    $('.parrilla_grilled_herbs').css('display', 'none');
+                    $('.parrilla_grilled_herbs_combo').css('display', 'none');
+                    $('.burguer').css('display', 'none');
+                    $('.burguer_combo').css('display', 'none');
+                    $('.catupiry_angus').css('display', 'flex');
+                    $('.catupiry_angus_combo').css('display', 'none');
+                    $('.classic').css('display', 'none');
+                    $('.classic_combo').css('display', 'none');
+                    $('.special').css('display', 'none');
+                    $('.special_combo').css('display', 'none');
+                    $('.chicken').css('display', 'none');
+                    $('.chicken_combo').css('display', 'none');
+                } else if(ingredientes == 'PARRILLA CATUPIRY ANGUS COMBO') {
+                    $('.berry').css('display', 'none');
+                    $('.candy').css('display', 'none');
+                    $('.berry_combo').css('display', 'none');
+                    $('.parrilla_grilled_herbs').css('display', 'none');
+                    $('.parrilla_grilled_herbs_combo').css('display', 'none');
+                    $('.burguer').css('display', 'none');
+                    $('.burguer_combo').css('display', 'none');
+                    $('.catupiry_angus').css('display', 'none');
+                    $('.catupiry_angus_combo').css('display', 'flex');
+                    $('.classic').css('display', 'none');
+                    $('.classic_combo').css('display', 'none');
+                    $('.special').css('display', 'none');
+                    $('.special_combo').css('display', 'none');
+                    $('.chicken').css('display', 'none');
+                    $('.chicken_combo').css('display', 'none');
+                } else if(ingredientes == 'PARRILLA CLÁSSIC') {
+                    $('.berry').css('display', 'none');
+                    $('.candy').css('display', 'none');
+                    $('.berry_combo').css('display', 'none');
+                    $('.parrilla_grilled_herbs').css('display', 'none');
+                    $('.parrilla_grilled_herbs_combo').css('display', 'none');
+                    $('.burguer').css('display', 'none');
+                    $('.burguer_combo').css('display', 'none');
+                    $('.catupiry_angus').css('display', 'none');
+                    $('.catupiry_angus_combo').css('display', 'none');
+                    $('.classic').css('display', 'flex');
+                    $('.classic_combo').css('display', 'none');
+                    $('.special').css('display', 'none');
+                    $('.special_combo').css('display', 'none');
+                    $('.chicken').css('display', 'none');
+                    $('.chicken_combo').css('display', 'none');
+                } else if(ingredientes == 'PARRILLA CLÁSSIC COMBO') {
+                    $('.berry').css('display', 'none');
+                    $('.candy').css('display', 'none');
+                    $('.berry_combo').css('display', 'none');
+                    $('.parrilla_grilled_herbs').css('display', 'none');
+                    $('.parrilla_grilled_herbs_combo').css('display', 'none');
+                    $('.burguer').css('display', 'none');
+                    $('.burguer_combo').css('display', 'none');
+                    $('.catupiry_angus').css('display', 'none');
+                    $('.catupiry_angus_combo').css('display', 'none');
+                    $('.classic').css('display', 'none');
+                    $('.classic_combo').css('display', 'flex');
+                    $('.special').css('display', 'none');
+                    $('.special_combo').css('display', 'none');
+                    $('.chicken').css('display', 'none');
+                    $('.chicken_combo').css('display', 'none');
+                } else if(ingredientes == 'PARRILLA SPECIAL DUPLO') {
+                    $('.berry').css('display', 'none');
+                    $('.candy').css('display', 'none');
+                    $('.berry_combo').css('display', 'none');
+                    $('.parrilla_grilled_herbs').css('display', 'none');
+                    $('.parrilla_grilled_herbs_combo').css('display', 'none');
+                    $('.burguer').css('display', 'none');
+                    $('.burguer_combo').css('display', 'none');
+                    $('.catupiry_angus').css('display', 'none');
+                    $('.catupiry_angus_combo').css('display', 'none');
+                    $('.classic').css('display', 'none');
+                    $('.classic_combo').css('display', 'none');
+                    $('.special').css('display', 'flex');
+                    $('.special_combo').css('display', 'none');
+                    $('.chicken').css('display', 'none');
+                    $('.chicken_combo').css('display', 'none');
+                } else if(ingredientes == 'PARRILLA SPECIAL DUPLO COMBO') {
+                    $('.berry').css('display', 'none');
+                    $('.candy').css('display', 'none');
+                    $('.berry_combo').css('display', 'none');
+                    $('.parrilla_grilled_herbs').css('display', 'none');
+                    $('.parrilla_grilled_herbs_combo').css('display', 'none');
+                    $('.burguer').css('display', 'none');
+                    $('.burguer_combo').css('display', 'none');
+                    $('.catupiry_angus').css('display', 'none');
+                    $('.catupiry_angus_combo').css('display', 'none');
+                    $('.classic').css('display', 'none');
+                    $('.classic_combo').css('display', 'none');
+                    $('.special').css('display', 'none');
+                    $('.special_combo').css('display', 'flex');
+                    $('.chicken').css('display', 'none');
+                    $('.chicken_combo').css('display', 'none');
+                } else if(ingredientes == 'PARRILLA CHICKEN') {
+                    $('.berry').css('display', 'none');
+                    $('.candy').css('display', 'none');
+                    $('.berry_combo').css('display', 'none');
+                    $('.parrilla_grilled_herbs').css('display', 'none');
+                    $('.parrilla_grilled_herbs_combo').css('display', 'none');
+                    $('.burguer').css('display', 'none');
+                    $('.burguer_combo').css('display', 'none');
+                    $('.catupiry_angus').css('display', 'none');
+                    $('.catupiry_angus_combo').css('display', 'none');
+                    $('.classic').css('display', 'none');
+                    $('.classic_combo').css('display', 'none');
+                    $('.special').css('display', 'none');
+                    $('.special_combo').css('display', 'none');
+                    $('.chicken').css('display', 'flex');
+                    $('.chicken_combo').css('display', 'none');
+                } else if(ingredientes == 'PARRILLA CHICKEN COMBO') {
+                    $('.berry').css('display', 'none');
+                    $('.candy').css('display', 'none');
+                    $('.berry_combo').css('display', 'none');
+                    $('.parrilla_grilled_herbs').css('display', 'none');
+                    $('.parrilla_grilled_herbs_combo').css('display', 'none');
+                    $('.burguer').css('display', 'none');
+                    $('.burguer_combo').css('display', 'none');
+                    $('.catupiry_angus').css('display', 'none');
+                    $('.catupiry_angus_combo').css('display', 'none');
+                    $('.classic').css('display', 'none');
+                    $('.classic_combo').css('display', 'none');
+                    $('.special').css('display', 'none');
+                    $('.special_combo').css('display', 'none');
+                    $('.chicken').css('display', 'none');
+                    $('.chicken_combo').css('display', 'flex');
+                } else {
+                    $('.berry').css('display', 'none');
+                    $('.candy').css('display', 'none');
+                    $('.berry_combo').css('display', 'none');
+                    $('.parrilla_grilled_herbs').css('display', 'none');
+                    $('.parrilla_grilled_herbs_combo').css('display', 'none');
+                    $('.burguer').css('display', 'none');
+                    $('.burguer_combo').css('display', 'none');
+                    $('.catupiry_angus').css('display', 'none');
+                    $('.catupiry_angus_combo').css('display', 'none');
+                    $('.classic').css('display', 'none');
+                    $('.classic_combo').css('display', 'none');
+                    $('.special').css('display', 'none');
+                    $('.special_combo').css('display', 'none');
+                    $('.chicken').css('display', 'none');
+                    $('.chicken_combo').css('display', 'none');
+                }
+            });
+
+            // mostra div caso usuario more em apartamento
+            $("#residencia").change(function(){
+                var residencia = $("#residencia option:selected").val();
+                if(residencia === 'Apartamento') {
+                    $('.res_ap').css('display', 'block');
+                } else {
+                    $('.res_ap').css('display', 'none');
+                }
+            });
+
+            // alterna divs de forma de pagamento pix ou dinheiro
+            $("#forma_pagamento").change(function(){
+                var pix = $("#forma_pagamento option:selected").val();
+                if(pix === 'Pix') {
+                    $('.chave_pix').css('display', 'flex');
+                    $('.dinheiro').css('display', 'none');
+                } else if (pix === 'Dinheiro') {
+                    $('.dinheiro').css('display', 'flex');
+                    $('.chave_pix').css('display', 'none');    
+                } else {
+                    $('.chave_pix').css('display', 'none');
+                    $('.dinheiro').css('display', 'none');
+                }
+            });
+
+            // Ao selecionar o lanche preenche o campo de preço
+            $('#lanche').change(function() {
+                var preco_lanche = $(this).val();
+                switch(preco_lanche ) {
+                    case preco_lanche == 'PARRILLA BERRY' ? $('#preco_lanche').val('R$ 29.00') : '':
+                    break;
+                    case preco_lanche == 'PARRILLA BERRY COMBO' ? $('#preco_lanche').val('R$ 37.00') : '':
+                    break;
+                    case preco_lanche == 'PARRILLA CANDY' ? $('#preco_lanche').val('R$ 14,00') : '':
+                    break;
+                    case preco_lanche == 'PARRILLA GRILLED HERBS' ? $('#preco_lanche').val('R$ 27,00') : '':
+                    break;
+                    case preco_lanche == 'PARRILLA GRILLED HERBS COMBO' ? $('#preco_lanche').val('R$ 35,00') : '':
+                    break;
+                    case preco_lanche == 'PARRILLA BURGER' ? $('#preco_lanche').val('R$ 22,00') : '':
+                    break;
+                    case preco_lanche == 'PARRILLA BURGER COMBO' ? $('#preco_lanche').val('R$ 30,00') : '':
+                    break;
+                    case preco_lanche == 'PARRILLA CATUPIRY ANGUS' ? $('#preco_lanche').val('R$ 29,00') : '':
+                    break;
+                    case preco_lanche == 'PARRILLA CATUPIRY ANGUS COMBO' ? $('#preco_lanche').val('R$ 37,00') : '':
+                    break;
+                    case preco_lanche == 'PARRILLA CLÁSSIC' ? $('#preco_lanche').val('R$ 25,00') : '':
+                    break;
+                    case preco_lanche == 'PARRILLA CLÁSSIC COMBO' ? $('#preco_lanche').val('R$ 33,00') : '':
+                    break;
+                    case preco_lanche == 'PARRILLA SPECIAL DUPLO' ? $('#preco_lanche').val('R$ 29,00') : '':
+                    break;
+                    case preco_lanche == 'PARRILLA SPECIAL DUPLO COMBO' ? $('#preco_lanche').val('R$ 37,00') : '':
+                    break;
+                    case preco_lanche == 'PARRILLA CHICKEN' ? $('#preco_lanche').val('R$ 27,00') : '':
+                    break;
+                    case preco_lanche == 'PARRILLA CHICKEN COMBO' ? $('#preco_lanche').val('R$ 35,00') : '':
+                    break;
+                }
+            });
+
+
+            // Ao selecionar a bebida preenche o campo de preço
+            var bebida = $('#bebida').val();
+            $('#bebida').change(function() {
+                var preco_bebida = $(this).val();
+                switch(preco_bebida) {
+                    case preco_bebida == 'Coca-Cola' ? $('#preco_bebida').val('10.50') : '':
+                    break;
+                    case preco_bebida == 'Pepsi' ? $('#preco_bebida').val('20.00') : '':
+                    break;
+                    case preco_bebida == 'Água' ? $('#preco_bebida').val('30.00') : '':
+                    break;
+                }                    
+            });
+
+            // 1º etapa do processo, pega os dados do usuário
+            $(".etapa_1").click(function () {
+                event.preventDefault();
+                var nome = $('#nome').val();
+                var cep = $('#cep').val();
+                var rua = $('#rua').val();
+                var bairro = $('#bairro').val();
+                var numero = $('#numero').val();
+                var telefone = $('#telefone').val();
+                var apartamento = $('#apartamento').val();
+                var bloco = $('#bloco').val();
+                var array = [];
+
+                // Faz um push nos dados o usuário para verificar se os valores foram preenchidos antes de passar para a próxima fase
+                array.push(nome, cep, numero, telefone);
+
+                switch (array === '') {
+                    case array[0] === '' ? $('#validacao-nome').css('display', 'block'):
+                        $('#validacao-nome').css('display', 'none'):
+                            break;
+                    case array[1] === '' ? $('#validacao-cep').css('display', 'block'):
+                        $('#validacao-cep').css('display', 'none'):
+                            break;
+                    case array[2] === '' ? $('#validacao-numero').css('display', 'block'):
+                        $('#validacao-numero').css('display', 'none'):
+                            break;
+                    case array[3] === '' ? $('#validacao-telefone').css('display', 'block'):
+                        $('#validacao-telefone').css('display', 'none'):
+                            break;
+                }
+
+                // Verifica se não há nenhum campo vazio, então passa para o pedido do lanche
+                if (array[0] !== '' && array[1] !== '' && array[2] !== '' && array[3] !== '') {
+                    $('#dados_usuario').css('display', 'none');
+                    $('#pedido_lanche').fadeIn().css('display', 'block');
+
+                    $(".etapa_2").click(function () {
+                        event.preventDefault();
+                        var observacoes = $('#observacoes').val();
+                        var lanche = $('#lanche').val();
+                        var preco_lanche = $('#preco_lanche').val().replace('R$ ', '');
+                        
+                        // Verifica se os campos estão devidamente preenchidos e então passa para a parte de pedido de bebidas
+                        if (lanche !== null) {
+                            $('#pedido_lanche').css('display', 'none');
+                            $('#pedido_bebida').fadeIn().css('display', 'block');
+
+                            $(".etapa_3").click(function () {
+                                event.preventDefault();
+
+                                var bebida = $('#bebida').val().replace('R$ ', '');
+                                var preco_bebida = $('#preco_bebida').val();
+                                var preco_total = parseFloat(preco_lanche) + parseFloat(preco_bebida);
+
+                                if (bebida !== null) {
+                                    $('#pedido_bebida').css('display', 'none');
+                                    $('#pagamento').fadeIn().css('display', 'block');
+                                    $(".confirmar_pedido").click(function () {
+                                        event.preventDefault();
+
+                                        var forma_pagamento = $('#forma_pagamento').val();   
+                                        var troco = $('#troco').val();  
+                                        if(forma_pagamento !== null) {
+                                            $('#pagamento').css('display', 'none');
+                                            $('#pedido').fadeIn().css('display', 'block');
+
+                                            var telefone_replace = telefone.replace("(", "")
+                                            .replace(")", "").replace(" ", "").replace(" ",
+                                                "").replace("-", "");
+
+                                                if (troco != '' && apartamento != '' && bloco != '') {                                                
+                                                var pedido = '*Pedido*%0A*Nome:* ' + nome +
+                                                '%0A*Rua:* ' + rua + ' Nº ' + numero +
+                                                '%0A*Bairro:* ' + bairro +
+                                                '%0A*Apartamento:* ' + apartamento +
+                                                '%0A*Bloco:* ' + bloco +
+                                                '%0A*Telefone:* ' + telefone +
+                                                '%0A*Lanche:* ' + lanche +
+                                                '%0A*Bebida:* ' + bebida +
+                                                '%0A*Observações:* ' + observacoes +
+                                                '%0A*Preço Total:* R$ ' + preco_total +
+                                                '%0A*Troco para:* R$ ' + troco +
+                                                '%0A*Forma de pagamento:* ' + forma_pagamento;
+
+                                                $('#pedido').html(
+                                                '<div class="row col-12"><h1>Pedido</h1></div> <div class="row col-12"><div><strong>Nome: </strong>' +
+                                                nome + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Rua: </strong>' + rua +
+                                                ' Nº ' + numero + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Bairro: </strong>' + bairro + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Apartamento: </strong> ' + apartamento + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Bloco: </strong> ' + bloco + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Telefone: </strong>' +
+                                                telefone + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Lanche: </strong>' + lanche + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Observações: </strong>' + observacoes + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Bebida: </strong>' + bebida + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Valor Total: </strong>R$ ' + parseFloat(preco_total) + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Troco para : </strong> R$ ' + troco + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Forma de pagamento: </strong> ' + forma_pagamento + '</div></div>');
+                                            } else if (troco === '' && apartamento != '' && bloco != '') {
+                                                var pedido = '*Pedido*%0A*Nome:* ' + nome +
+                                                '%0A*Rua:* ' + rua + ' Nº ' + numero +
+                                                '%0A*Bairro:* ' + bairro +
+                                                '%0A*Apartamento:* ' + apartamento +
+                                                '%0A*Bloco:* ' + bloco +
+                                                '%0A*Telefone:* ' + telefone +
+                                                '%0A*Lanche:* ' + lanche +
+                                                '%0A*Bebida:* ' + bebida +
+                                                '%0A*Observações:* ' + observacoes +
+                                                '%0A*Preço Total:* R$ ' + preco_total +
+                                                '%0A*Forma de pagamento:* ' + forma_pagamento;
+
+                                                $('#pedido').html(
+                                                '<div class="row col-12"><h1>Pedido</h1></div> <div class="row col-12"><div><strong>Nome: </strong>' +
+                                                nome + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Rua: </strong>' + rua +
+                                                ' Nº ' + numero + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Bairro: </strong>' + bairro + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Apartamento: </strong> ' + apartamento + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Bloco: </strong> ' + bloco + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Telefone: </strong>' +
+                                                telefone + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Lanche: </strong>' + lanche + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Observações: </strong>' + observacoes + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Bebida: </strong>' + bebida + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Valor Total: </strong>R$ ' + parseFloat(preco_total) + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Forma de pagamento: </strong> ' + forma_pagamento + '</div></div>');
+                                            } else if (troco != '' && apartamento != '') {
+                                                var pedido = '*Pedido*%0A*Nome:* ' + nome +
+                                                '%0A*Rua:* ' + rua + ' Nº ' + numero +
+                                                '%0A*Bairro:* ' + bairro +
+                                                '%0A*Apartamento:* ' + apartamento +
+                                                '%0A*Telefone:* ' + telefone +
+                                                '%0A*Lanche:* ' + lanche +
+                                                '%0A*Bebida:* ' + bebida +
+                                                '%0A*Observações:* ' + observacoes +
+                                                '%0A*Preço Total:* R$ ' + preco_total +
+                                                '%0A*Troco para:* R$ ' + troco +
+                                                '%0A*Forma de pagamento:* ' + forma_pagamento;
+
+                                                $('#pedido').html(
+                                                '<div class="row col-12"><h1>Pedido</h1></div> <div class="row col-12"><div><strong>Nome: </strong>' +
+                                                nome + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Rua: </strong>' + rua +
+                                                ' Nº ' + numero + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Bairro: </strong>' + bairro + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Apartamento: </strong> ' + apartamento + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Telefone: </strong>' +
+                                                telefone + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Lanche: </strong>' + lanche + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Observações: </strong>' + observacoes + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Bebida: </strong>' + bebida + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Valor Total: </strong>R$ ' + parseFloat(preco_total) + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Troco para : </strong> R$ ' + troco + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Forma de pagamento: </strong> ' + forma_pagamento + '</div></div>');
+                                            } else {
+                                                var pedido = '*Pedido*%0A*Nome:* ' + nome +
+                                                '%0A*Rua:* ' + rua + ' Nº ' + numero +
+                                                '%0A*Bairro:* ' + bairro +
+                                                '%0A*Telefone:* ' + telefone +
+                                                '%0A*Lanche:* ' + lanche +
+                                                '%0A*Bebida:* ' + bebida +
+                                                '%0A*Observações:* ' + observacoes +
+                                                '%0A*Preço Total:* R$ ' + preco_total +
+                                                '%0A*Forma de pagamento:* ' + forma_pagamento;
+
+                                                $('#pedido').html(
+                                                '<div class="row col-12"><h1>Pedido</h1></div> <div class="row col-12"><div><strong>Nome: </strong>' +
+                                                nome + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Rua: </strong>' + rua +
+                                                ' Nº ' + numero + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Bairro: </strong>' + bairro + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Telefone: </strong>' +
+                                                telefone + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Lanche: </strong>' + lanche + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Observações: </strong>' + observacoes + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Bebida: </strong>' + bebida + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Valor Total: </strong>R$ ' + parseFloat(preco_total) + '</div></div>' +
+                                                '<div class="row col-12"><div><strong>Forma de pagamento: </strong> ' + forma_pagamento + '</div></div>');
+                                            }
+
+                                            var fin_ped = $('#finalizar_pedido').attr('href',
+                                                'https://api.whatsapp.com/send?phone=55' +
+                                                telefone_replace + '&text=' + pedido,
+                                                "_blank");
+
+                                            $('#botao').css('display', 'none');
+                                            $('#link_wpp').fadeIn().css('display', 'flex');
+                                        } else {
+                                            alert('Porfavor Selecione uma forma de pagamento');
+                                        }
+                                    });
+                                } else {
+                                    alert('Porfavor Selecione uma bebida');
+                                }
+
+                            });
+                        } else {
+                            alert('Porfavor selecione um lanche');
+                        }
+
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
